@@ -1,7 +1,17 @@
-<div>
-    ㅇ이페이지는 show 입니다.
-    {{#article}}
-        {{id}} {{title}} {{content}}
-    {{/article}}
+{{>layouts/header}}
+<div class="container-md container-sm">
+{{#article}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{id}}</h6>
+            <p class="card-text">{{content}}</p>
+            <a href="/articles/new" class="card-link">new article</a>
+            <a href="/articles/" class="card-link">list article</a>
+        </div>
+    </div>
+    <a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+{{/article}}
 </div>
 {{>layouts/footer}}
