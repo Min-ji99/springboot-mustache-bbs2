@@ -1,0 +1,16 @@
+{{>layouts/header}}
+<form action="/articles/{{id}}/update" method="post">
+    <div class="mb-3 container-sm">
+        <input type="hidden" name="id" value="{{id}}">
+        <label for="exampleInputTitle1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleInputTitle1" name="title" aria-describedby="title">
+        <div id="titleHelp" class="form-text">제목을 입력하세요</div>
+        <label for="exampleInputContent1" class="form-label">content</label>
+        <input type="text" class="form-control" id="exampleInputContent1" name="content" aria-describedby="content">
+        <div id="contentHelp" class="form-text">내용을 입력하세요</div>
+        <input type="submit" class="btn btn-dark"></input>
+    </div>
+</form>
+{{>layouts/footer}}
+<a href="/articles/{{id}}">1개 조회 페이지</a>
+<a href="/articles/">목록</a>
